@@ -1,0 +1,4 @@
+extracted_files/*
+*.tar
+dataset/flaws_cloudtrail_logs/*.gz
+dataset/flaws_cloudtrail_logs/*.json

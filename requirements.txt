@@ -1,0 +1,11 @@
+# Libraries used by the notebooks (installed by the first cell of every notebook).
+sagemaker>=2.232,<3       # SageMaker Python SDK v2 - all notebooks and pipelines use the v2 API
+boto3
+duckdb>=1.0
+pandas>=2.0
+pyarrow>=14
+numpy
+scikit-learn>=1.2
+matplotlib>=3.7
+requests
+xgboost==2.1.4            # matches the XGBoost library pre-installed in SageMaker Studio

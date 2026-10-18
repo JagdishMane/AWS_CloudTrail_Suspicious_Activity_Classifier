@@ -1,5 +1,23 @@
 {
-  "run_id": "20261018-093650",
+  "run_id": "20261018-105618",
   "bucket": "sagemaker-us-east-1-939341772580",
-  "prefix": "cloudtrail-risk/20261018-093650"
+  "prefix": "cloudtrail-risk/20261018-105618",
+  "raw_uri": "s3://sagemaker-us-east-1-939341772580/cloudtrail-risk/20261018-105618/raw/flaws_cloudtrail_logs.tar",
+  "train_s3_uri": "s3://sagemaker-us-east-1-939341772580/cloudtrail-risk/20261018-105618/prepared/train",
+  "validation_s3_uri": "s3://sagemaker-us-east-1-939341772580/cloudtrail-risk/20261018-105618/prepared/validation",
+  "monitor_baseline_uri": "s3://sagemaker-us-east-1-939341772580/cloudtrail-risk/20261018-105618/prepared/reports/monitor_baseline.csv",
+  "profile_uri": "s3://sagemaker-us-east-1-939341772580/cloudtrail-risk/20261018-105618/reports/data_profile.json",
+  "training_mode": "local_notebook_kernel",
+  "model_artifact_uri": "s3://sagemaker-us-east-1-939341772580/cloudtrail-risk/20261018-105618/training/model.tar.gz",
+  "evaluation_uri": "s3://sagemaker-us-east-1-939341772580/cloudtrail-risk/20261018-105618/reports/evaluation.json",
+  "quality_gate_passed": true,
+  "xgboost_version": "1.7.6",
+  "lineage_uri": "s3://sagemaker-us-east-1-939341772580/cloudtrail-risk/20261018-105618/reports/lineage.json",
+  "model_package_group": "CloudTrail-Suspicious-Activity-XGBoost",
+  "model_package_arn": "arn:aws:sagemaker:us-east-1:939341772580:model-package/CloudTrail-Suspicious-Activity-XGBoost/4",
+  "endpoint_name": "cloudtrail-risk-20261018-105618",
+  "alarm_names": [
+    "cloudtrail-risk-20261018-105618-5xx",
+    "cloudtrail-risk-20261018-105618-latency"
+  ]
 }

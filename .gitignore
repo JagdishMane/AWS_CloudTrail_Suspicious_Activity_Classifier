@@ -3,3 +3,7 @@ extracted_files/*
 dataset/flaws_cloudtrail_logs/*.gz
 dataset/flaws_cloudtrail_logs/*.json
 raw/*
+flaws_cloudtrail_logs.tar
+cloudtrail_project/*
+cloudtrail_project/resources.json
+cloudtrail_project/src/*

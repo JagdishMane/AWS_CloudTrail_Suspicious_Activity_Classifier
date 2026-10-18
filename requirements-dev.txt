@@ -1,0 +1,10 @@
+# Used by GitHub Actions (CI): unit tests + linting. No AWS access needed.
+duckdb>=1.0
+pandas>=2.0
+pyarrow>=14
+numpy
+scikit-learn>=1.2
+matplotlib>=3.7
+requests
+pytest>=8
+ruff>=0.5

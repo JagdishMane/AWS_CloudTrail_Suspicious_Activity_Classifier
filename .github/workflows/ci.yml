@@ -1,0 +1,31 @@
+name: CI
+
+# Continuous integration: runs on every push and pull request.
+# Lints the code and runs the unit tests (synthetic data - no AWS credentials needed).
+# The SageMaker training/deployment pipeline (CD) is started from SageMaker Studio,
+# because AWS Academy Learner Lab credentials are temporary (see notebooks/06_cicd_pipeline.ipynb).
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Lint (ruff)
+        run: ruff check src pipelines tests
+
+      - name: Unit tests (pytest)
+        run: pytest -v tests

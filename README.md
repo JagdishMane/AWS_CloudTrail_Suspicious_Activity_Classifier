@@ -59,6 +59,7 @@ flowchart LR
 │   └── best_hyperparameters.json    written by notebook 03
 ├── tests/                           pytest unit tests on synthetic CloudTrail data
 ├── docs/data_catalog.md             what is stored where in S3
+├── experiments/event_level_baseline/  earlier event-level workflow (baseline that motivated the window design)
 └── .github/workflows/ci.yml         CI: ruff + pytest on every push / PR
 ```
 
@@ -95,6 +96,14 @@ pytest -v tests && ruff check src pipelines tests
 | Average precision, ROC-AUC and recall at an alert budget instead of accuracy | positives are < 1 % of windows |
 | Thresholds from analyst capacity | an alert queue has a fixed daily review budget |
 | Release gate: test ROC-AUC ≥ 0.80 and AP lift ≥ 5× | only models that clearly beat random ranking are registered |
+
+## Baseline experiment
+
+`experiments/event_level_baseline/` holds an earlier end-to-end workflow that scored individual events. Its weak label
+is a deterministic function of its own input features (root identity, sensitive API names, authorisation failures),
+so it reaches ROC-AUC ≈ 1.0 by reproducing the rule. That finding motivated the final design: actor × 5-minute windows,
+label-defining columns excluded from the inputs, and evaluation on an untouched future year
+(see that folder's README).
 
 ## Limitations
 
